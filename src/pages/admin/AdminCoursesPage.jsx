@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import PageSection from '../../components/PageSection'
 import TextInput from '../../components/TextInput'
-import { useLearning } from '../../hooks/useLearning'
 
 const emptyCourseForm = {
   title: '',
@@ -12,8 +11,7 @@ const emptyCourseForm = {
   description: '',
 }
 
-function AdminCoursesPage() {
-  const { courses, addCourse, updateCourse, deleteCourse, enrollments } = useLearning()
+function AdminCoursesPage({ courses, addCourse, updateCourse, deleteCourse, enrollments }) {
   const [form, setForm] = useState(emptyCourseForm)
   const [editingId, setEditingId] = useState(null)
   const [errors, setErrors] = useState({})

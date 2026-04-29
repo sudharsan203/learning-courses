@@ -2,11 +2,9 @@ import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import AuthLayout from '../../components/AuthLayout'
 import TextInput from '../../components/TextInput'
-import { useLearning } from '../../hooks/useLearning'
 
-function RegisterPage() {
+function RegisterPage({ currentUser, registerStudent }) {
   const navigate = useNavigate()
-  const { currentUser, registerStudent } = useLearning()
   const [form, setForm] = useState({
     name: '',
     email: '',

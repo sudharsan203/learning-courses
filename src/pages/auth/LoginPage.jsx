@@ -2,11 +2,9 @@ import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import AuthLayout from '../../components/AuthLayout'
 import TextInput from '../../components/TextInput'
-import { useLearning } from '../../hooks/useLearning'
 
-function LoginPage() {
+function LoginPage({ currentUser, login }) {
   const navigate = useNavigate()
-  const { currentUser, login } = useLearning()
   const [form, setForm] = useState({
     email: '',
     password: '',

@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageSection from '../../components/PageSection'
-import { useLearning } from '../../hooks/useLearning'
 
-function AdminDashboard() {
-  const { courses, enrollments, users } = useLearning()
+function AdminDashboard({ courses, enrollments, users }) {
   const studentsCount = users.filter((user) => user.role === 'student').length
   const averageProgress =
     enrollments.length === 0

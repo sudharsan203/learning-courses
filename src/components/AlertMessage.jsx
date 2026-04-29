@@ -1,8 +1,4 @@
-import { useLearning } from '../hooks/useLearning'
-
-function AlertMessage() {
-  const { alert } = useLearning()
-
+function AlertMessage({ alert }) {
   if (!alert) {
     return null
   }

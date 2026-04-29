@@ -1,9 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { adminLinks, publicLinks, studentLinks } from '../data/navigation'
-import { useLearning } from '../hooks/useLearning'
 
-function Header() {
-  const { currentUser, logout } = useLearning()
+function Header({ currentUser, logout }) {
   let links = publicLinks
 
   if (currentUser?.role === 'student') {

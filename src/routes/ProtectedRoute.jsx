@@ -1,9 +1,6 @@
 import { Navigate } from 'react-router-dom'
-import { useLearning } from '../hooks/useLearning'
 
-function ProtectedRoute({ allowedRole, children }) {
-  const { currentUser } = useLearning()
-
+function ProtectedRoute({ allowedRole, children, currentUser }) {
   if (!currentUser) {
     return <Navigate to="/login" replace />
   }

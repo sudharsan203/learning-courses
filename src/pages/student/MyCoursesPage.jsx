@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageSection from '../../components/PageSection'
-import { useLearning } from '../../hooks/useLearning'
 
-function MyCoursesPage() {
-  const { courses, currentUser, enrollments, unenrollCourse, updateProgress } = useLearning()
+function MyCoursesPage({ courses, currentUser, enrollments, unenrollCourse, updateProgress }) {
   const myEnrollments = enrollments.filter((enrollment) => enrollment.studentId === currentUser.id)
 
   return (

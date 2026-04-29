@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageSection from '../../components/PageSection'
-import { useLearning } from '../../hooks/useLearning'
 
-function StudentDashboard() {
-  const { currentUser, courses, enrollments } = useLearning()
+function StudentDashboard({ currentUser, courses, enrollments }) {
   const myEnrollments = enrollments.filter((enrollment) => enrollment.studentId === currentUser.id)
   const completedCourses = myEnrollments.filter((enrollment) => enrollment.progress === 100).length
   const averageProgress =
